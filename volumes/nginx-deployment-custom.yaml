@@ -29,18 +29,15 @@ spec:
           items:
             - key: nginx.conf
               path: nginx.conf
-
 ---
 apiVersion: v1
 kind: Service
 metadata:
   name: nginx
 spec:
-  type: NodePort
+  type: LoadBalancer
   ports:
   - port: 80
-    protocol: TCP
     targetPort: 80
-    nodePort: 30008
   selector:
     app: nginx 
