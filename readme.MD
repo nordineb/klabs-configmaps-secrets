@@ -110,6 +110,7 @@ echo -ne '{"password":"ABCABC123!!!}' | gcloud secrets create mysecret --data-fi
 
 Create a link to the GSM secret
 ```
+export PROJECT_ID=$(gcloud config get-value project)
 cat <<EOF | kubectl apply -f - 
 apiVersion: external-secrets.io/v1beta1
 kind: SecretStore
