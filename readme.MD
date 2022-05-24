@@ -130,7 +130,8 @@ EOF
 
 Create an external secret 
 ```
-ApiVersion: external-secrets.io/v1beta1
+cat <<EOF | kubectl apply -f - 
+apiVersion: external-secrets.io/v1beta1
 kind: ExternalSecret
 metadata:
   name: gcp-external-secret
