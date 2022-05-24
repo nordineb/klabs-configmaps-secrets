@@ -123,8 +123,7 @@ spec:
           secretRef:
             secretAccessKeySecretRef:
               name: gcpsm-secret                        
-              key: secret-access-credentials
-              namespace: eso                      
+              key: secret-access-credentials                     
         projectID: $PROJECT_ID
 EOF
 ```
@@ -135,7 +134,6 @@ ApiVersion: external-secrets.io/v1beta1
 kind: ExternalSecret
 metadata:
   name: gcp-external-secret
-  namespace: test
 spec:
   secretStoreRef:
     kind: SecretStore
